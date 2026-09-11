@@ -745,6 +745,17 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   text-transform: uppercase;
 }
 
+/* ── Actual project screenshot image ── */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  /* Remove background gradient once real image is shown */
+  border-radius: inherit;
+}
+
 /* ── Project content ── */
 .project-number {
   font-family: var(--f-mono);
@@ -893,6 +904,46 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
 }
 
 .cert-card--featured .cert-card__date { color: rgba(255,255,255,0.55); }
+
+/* ── Clickable card (Credly link) ── */
+.cert-card--link {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card--link:focus-visible {
+  outline: 2px solid var(--c-border-focus);
+  outline-offset: 3px;
+}
+
+/* Push the "View Badge" label to the bottom of the card */
+.cert-card--link .cert-card__date {
+  margin-bottom: auto;
+}
+
+/* "View Badge on Credly ↗" footer label */
+.cert-card__credly {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-accent);
+  margin-top: var(--sp-3);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--dur-base), transform var(--dur-base);
+}
+
+.cert-card--featured .cert-card__credly {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cert-card--link:hover .cert-card__credly {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ══════════════════════════════════════════════════════════════
    14. TIMELINE — Experience
