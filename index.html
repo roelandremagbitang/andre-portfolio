@@ -19,7 +19,7 @@
     rel="stylesheet" />
   <!-- No-flash theme init: apply saved theme before first paint -->
   <script>
-    (function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
+    (function () { var t = localStorage.getItem('theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })();
   </script>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -45,22 +45,25 @@
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <!-- Theme toggle -->
-        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Switch to light mode" title="Toggle light/dark mode">
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Switch to light mode"
+          title="Toggle light/dark mode">
           <!-- Sun icon (shown in dark mode) -->
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"/>
-            <line x1="12" y1="2" x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="22"/>
-            <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
-            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-            <line x1="2" y1="12" x2="5" y2="12"/>
-            <line x1="19" y1="12" x2="22" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
-            <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <line x1="12" y1="2" x2="12" y2="5" />
+            <line x1="12" y1="19" x2="12" y2="22" />
+            <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+            <line x1="2" y1="12" x2="5" y2="12" />
+            <line x1="19" y1="12" x2="22" y2="12" />
+            <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+            <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
           </svg>
           <!-- Moon icon (shown in light mode) -->
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
         <button class="navbar__menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false"
@@ -98,14 +101,21 @@
       <!-- Theme toggle in drawer -->
       <button class="drawer__link" id="drawer-theme-toggle" aria-label="Toggle light/dark mode"
         style="display:flex;align-items:center;gap:10px;margin-top:8px;border-top:1px solid var(--c-border);padding-top:12px;">
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
-          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-          <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <line x1="12" y1="2" x2="12" y2="5" />
+          <line x1="12" y1="19" x2="12" y2="22" />
+          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+          <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+          <line x1="2" y1="12" x2="5" y2="12" />
+          <line x1="19" y1="12" x2="22" y2="12" />
+          <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+          <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
         </svg>
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
         <span id="drawer-theme-label">Switch to Light Mode</span>
       </button>
@@ -440,7 +450,7 @@
               <span class="timeline-line"></span>
             </div>
             <div class="timeline-entry__body">
-              <!-- Org logo: place your file at images/logos/dlsu-chorale.png -->
+
               <div class="timeline-entry__org-logo" aria-hidden="true">
                 <img src="images/logos/dlsu-chorale.png" alt="DLSU Chorale logo"
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
@@ -452,7 +462,8 @@
               <ul class="timeline-entry__bullets" aria-label="Responsibilities">
                 <li>Prepared weekly rehearsal reports documenting attendance, activities, and progress.</li>
                 <li>Developed and maintained Google Sheets trackers and Google Forms, including Approved Absence Forms,
-                  to streamline attendance and administrative processes.</li>
+                  to streamline attendance and administrative proce
+                  sses.</li>
               </ul>
             </div>
           </article>
@@ -462,7 +473,7 @@
               <span class="timeline-dot"></span>
             </div>
             <div class="timeline-entry__body">
-              <!-- Org logo: place your file at images/logos/lscs.png -->
+
               <div class="timeline-entry__org-logo" aria-hidden="true">
                 <img src="images/logos/lscs.png" alt="La Salle Computer Society logo"
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
@@ -494,7 +505,7 @@
         </header>
         <div class="education-card reveal" aria-labelledby="edu-degree">
           <div class="education-card__main">
-            <!-- DLSU logo: place your file at images/logos/dlsu.png -->
+
             <div class="education-card__logo" aria-hidden="true">
               <img src="images/logos/dlsu.png" alt="De La Salle University logo"
                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
