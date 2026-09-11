@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Roel Andre S. Magbitang — Information Technology Student at De La Salle University. Portfolio showcasing projects in networking, web development, and information security." />
+  <meta name="author" content="Roel Andre S. Magbitang" />
+  <meta property="og:title" content="Roel Andre S. Magbitang | IT Student Portfolio" />
+  <meta property="og:description" content="Information Technology Student at De La Salle University — networking, web development, and information security." />
+  <meta property="og:type" content="website" />
+  <title>Roel Andre S. Magbitang | IT Student Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__brand" aria-label="Andre Magbitang — return to top">
+        Andre<span class="navbar__brand-accent">.</span>
+      </a>
+      <nav class="navbar__nav" id="desktop-nav" aria-label="Main navigation">
+        <a href="#projects"       class="nav-link" id="navlink-projects">Projects</a>
+        <a href="#skills"         class="nav-link" id="navlink-skills">Skills</a>
+        <a href="#certifications" class="nav-link" id="navlink-certifications">Certifications</a>
+        <a href="#experience"     class="nav-link" id="navlink-experience">Experience</a>
+        <a href="#education"      class="nav-link" id="navlink-education">Education</a>
+        <a href="#about"          class="nav-link" id="navlink-about">About</a>
+        <a href="#contact"        class="nav-link" id="navlink-contact">Contact</a>
+      </nav>
+      <button
+        class="navbar__menu-btn"
+        id="menu-btn"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+        aria-haspopup="true"
+      >
+        <span class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       MOBILE DRAWER
+  ════════════════════════════════════════════════════ -->
+  <div
+    class="drawer"
+    id="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+    aria-hidden="true"
+  >
+    <div class="drawer__overlay" id="drawer-overlay" aria-hidden="true"></div>
+    <nav class="drawer__panel" aria-label="Mobile navigation">
+      <button
+        class="drawer__close"
+        id="drawer-close"
+        aria-label="Close navigation menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="drawer__brand">Andre<span class="navbar__brand-accent">.</span></div>
+      <a href="#projects"       class="drawer__link" id="drawer-link-projects">Projects</a>
+      <a href="#skills"         class="drawer__link" id="drawer-link-skills">Skills</a>
+      <a href="#certifications" class="drawer__link" id="drawer-link-certifications">Certifications</a>
+      <a href="#experience"     class="drawer__link" id="drawer-link-experience">Experience</a>
+      <a href="#education"      class="drawer__link" id="drawer-link-education">Education</a>
+      <a href="#about"          class="drawer__link" id="drawer-link-about">About</a>
+      <a href="#contact"        class="drawer__link" id="drawer-link-contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-name">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow">Hi, I'm</p>
+          <h1 class="hero__name" id="hero-name">
+            Roel Andre S.<br />Magbitang
+          </h1>
+          <p class="hero__role">Information Technology Student</p>
+          <p class="hero__tagline">
+            Pursuing a BS in Information Technology at De La Salle University —
+            building practical foundations across networking, web development,
+            and information security.
+          </p>
+          <div class="hero__cta-group">
+            <a href="#projects" class="btn btn--primary" id="hero-view-projects">View Projects</a>
+            <a href="resume.pdf" class="btn btn--outline" id="hero-view-resume" target="_blank" rel="noopener noreferrer">
+              View Resume
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Photo -->
+        <div class="hero__photo reveal" aria-hidden="true">
+          <div class="hero__photo-ring">
+            <div class="hero__photo-frame">
+              <img
+                src="profile.jpg"
+                alt="Roel Andre S. Magbitang"
+                class="hero__photo-img"
+                id="hero-profile-photo"
+                onerror="this.style.display='none';document.getElementById('hero-photo-fallback').style.display='flex';"
+              />
+              <div class="hero__photo-fallback" id="hero-photo-fallback" style="display:none;" aria-hidden="true">AM</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero__scroll-cue" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         PROJECTS  (Priority #1)
+    ════════════════════════════════════════════════════ -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="projects-heading">Projects</h2>
+          <p class="section__subtitle">Applied technical work developed through academic coursework and independent learning.</p>
+        </header>
+
+        <div class="projects-list">
+
+          <!-- Project 1 — Network Design -->
+          <article class="project-row reveal" aria-labelledby="proj-1-title">
+            <div class="project-row__visual project-visual--network" aria-hidden="true">
+              <div class="project-visual__inner">
+                <svg class="project-visual__icon" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="48" cy="18" r="10" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="18" cy="72" r="10" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="78" cy="72" r="10" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="48" cy="72" r="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
+                  <line x1="48" y1="28" x2="24" y2="62" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 3"/>
+                  <line x1="48" y1="28" x2="72" y2="62" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 3"/>
+                  <line x1="48" y1="28" x2="48" y2="65" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 3"/>
+                  <line x1="28" y1="72" x2="41" y2="72" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="55" y1="72" x2="68" y2="72" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="project-visual__caption">Network Infrastructure</span>
+              </div>
+            </div>
+            <div class="project-row__content">
+              <div class="project-number" aria-hidden="true">01</div>
+              <h3 class="project-title" id="proj-1-title">Network Design Project</h3>
+              <p class="project-description">
+                Designed and documented scalable network infrastructures across SOHO, campus, and wide-area networks by implementing advanced routing and switching protocols using both physical devices and Cisco Packet Tracer simulation.
+              </p>
+              <div class="project-tags" role="list" aria-label="Technologies used">
+                <span class="tag tag--mono" role="listitem">Cisco Packet Tracer</span>
+                <span class="tag tag--mono" role="listitem">SOHO</span>
+                <span class="tag tag--mono" role="listitem">Campus Network</span>
+                <span class="tag tag--mono" role="listitem">WAN</span>
+                <span class="tag tag--mono" role="listitem">Routing &amp; Switching</span>
+                <span class="tag tag--mono" role="listitem">Physical Devices</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 — ForumFriends -->
+          <article class="project-row project-row--flip reveal" aria-labelledby="proj-2-title">
+            <div class="project-row__content">
+              <div class="project-number" aria-hidden="true">02</div>
+              <h3 class="project-title" id="proj-2-title">ForumFriends</h3>
+              <p class="project-desc-label">A Full-Stack Forum Web Application</p>
+              <p class="project-description">
+                Developed a full-stack discussion forum featuring secure user authentication, CRUD functionality for posts and comments, voting, tagging, and dynamic dark/light mode support.
+              </p>
+              <div class="project-tags" role="list" aria-label="Technologies used">
+                <span class="tag tag--mono" role="listitem">HTML</span>
+                <span class="tag tag--mono" role="listitem">CSS</span>
+                <span class="tag tag--mono" role="listitem">JavaScript</span>
+                <span class="tag" role="listitem">Authentication</span>
+                <span class="tag" role="listitem">CRUD</span>
+                <span class="tag" role="listitem">Voting &amp; Tagging</span>
+                <span class="tag" role="listitem">Dark / Light Mode</span>
+              </div>
+            </div>
+            <div class="project-row__visual project-visual--forum" aria-hidden="true">
+              <div class="project-visual__inner">
+                <svg class="project-visual__icon" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="8" y="10" width="80" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="38" width="56" height="14" rx="4" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="60" width="66" height="14" rx="4" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="77" cy="45" r="9" stroke="currentColor" stroke-width="2"/>
+                  <line x1="73" y1="45" x2="81" y2="45" stroke="currentColor" stroke-width="2"/>
+                  <line x1="77" y1="41" x2="77" y2="49" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="8" cy="20" r="0" fill="none"/>
+                  <rect x="72" y="10" width="16" height="6" rx="3" fill="currentColor" opacity="0.3"/>
+                </svg>
+                <span class="project-visual__caption">Full-Stack Forum</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 — Malware Analysis -->
+          <article class="project-row reveal" aria-labelledby="proj-3-title">
+            <div class="project-row__visual project-visual--security" aria-hidden="true">
+              <div class="project-visual__inner">
+                <svg class="project-visual__icon" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M48 8L80 22V48C80 66 48 82 48 82C48 82 16 66 16 48V22L48 8Z" stroke="currentColor" stroke-width="2"/>
+                  <line x1="32" y1="38" x2="64" y2="38" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="32" y1="48" x2="64" y2="48" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="32" y1="58" x2="52" y2="58" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <circle cx="59" cy="58" r="6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M63 62 L68 67" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="project-visual__caption">Security Analysis</span>
+              </div>
+            </div>
+            <div class="project-row__content">
+              <div class="project-number" aria-hidden="true">03</div>
+              <h3 class="project-title" id="proj-3-title">Incident Response: Malware Analysis</h3>
+              <p class="project-description">
+                Investigated, contained, and eradicated active malware threats using PowerShell and the SysInternals Suite to deliver a comprehensive security analysis report inside a virtual machine.
+              </p>
+              <div class="project-tags" role="list" aria-label="Technologies used">
+                <span class="tag tag--mono" role="listitem">PowerShell</span>
+                <span class="tag tag--mono" role="listitem">SysInternals Suite</span>
+                <span class="tag tag--mono" role="listitem">VMWare</span>
+                <span class="tag" role="listitem">Malware Analysis</span>
+                <span class="tag" role="listitem">Incident Response</span>
+                <span class="tag" role="listitem">Security Analysis</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /projects-list -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SKILLS
+    ════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="skills-heading">Skills</h2>
+          <p class="section__subtitle">Technical competencies developed through coursework, projects, and certifications.</p>
+        </header>
+        <div class="skills-grid">
+
+          <div class="skill-card reveal" aria-labelledby="skill-prog">
+            <h3 class="skill-card__heading" id="skill-prog">Programming Languages</h3>
+            <div class="skill-tags" role="list" aria-label="Programming languages">
+              <span class="tag tag--mono" role="listitem">C</span>
+              <span class="tag tag--mono" role="listitem">Java</span>
+              <span class="tag tag--mono" role="listitem">HTML</span>
+              <span class="tag tag--mono" role="listitem">CSS</span>
+              <span class="tag tag--mono" role="listitem">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" aria-labelledby="skill-db">
+            <h3 class="skill-card__heading" id="skill-db">Database Management</h3>
+            <div class="skill-tags" role="list" aria-label="Database technologies">
+              <span class="tag tag--mono" role="listitem">MySQL</span>
+              <span class="tag tag--mono" role="listitem">MongoDB</span>
+              <span class="tag tag--mono" role="listitem">Firebase</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" aria-labelledby="skill-tools">
+            <h3 class="skill-card__heading" id="skill-tools">Tools &amp; Technologies</h3>
+            <div class="skill-tags" role="list" aria-label="Tools and technologies">
+              <span class="tag tag--mono" role="listitem">Visual Studio Code</span>
+              <span class="tag tag--mono" role="listitem">Cisco Packet Tracer</span>
+              <span class="tag tag--mono" role="listitem">SysInternals Suite</span>
+              <span class="tag tag--mono" role="listitem">VMWare</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" aria-labelledby="skill-soft">
+            <h3 class="skill-card__heading" id="skill-soft">Soft Skills</h3>
+            <div class="skill-tags" role="list" aria-label="Soft skills">
+              <span class="tag" role="listitem">Communication</span>
+              <span class="tag" role="listitem">Problem-Solving</span>
+              <span class="tag" role="listitem">Troubleshooting</span>
+              <span class="tag" role="listitem">Collaboration</span>
+              <span class="tag" role="listitem">Team Player</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CERTIFICATIONS
+    ════════════════════════════════════════════════════ -->
+    <section class="section" id="certifications" aria-labelledby="certs-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="certs-heading">Certifications</h2>
+          <p class="section__subtitle">Validated credentials from recognized industry organizations.</p>
+        </header>
+        <div class="certs-grid">
+
+          <!-- CCNA — Featured -->
+          <article class="cert-card cert-card--featured reveal" aria-labelledby="cert-ccna">
+            <div class="cert-card__issuer-badge" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <rect width="28" height="28" rx="6" fill="rgba(255,255,255,0.1)"/>
+                <path d="M6 14a8 8 0 1 1 16 0 8 8 0 0 1-16 0z" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+                <path d="M10 14l2.5 2.5 5.5-5" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="cert-card__issuer">Cisco</div>
+            <h3 class="cert-card__name" id="cert-ccna">CCNA: Enterprise Networking, Security, and Automation</h3>
+            <time class="cert-card__date" datetime="2025-09">September 2025</time>
+          </article>
+
+          <!-- Lean Six Sigma -->
+          <article class="cert-card reveal" aria-labelledby="cert-sixsigma">
+            <div class="cert-card__issuer">The Council for Six Sigma Certification (CSSC)</div>
+            <h3 class="cert-card__name" id="cert-sixsigma">Lean Six Sigma White Belt Certification</h3>
+            <time class="cert-card__date" datetime="2025-11">November 2025</time>
+          </article>
+
+          <!-- AWS -->
+          <article class="cert-card reveal" aria-labelledby="cert-aws">
+            <div class="cert-card__issuer">Amazon Web Services</div>
+            <h3 class="cert-card__name" id="cert-aws">AWS Academy Graduate – Cloud Foundations – Training Badge</h3>
+            <time class="cert-card__date" datetime="2024-12">December 2024</time>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         EXPERIENCE
+    ════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="experience" aria-labelledby="exp-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="exp-heading">Extracurricular Experience</h2>
+          <p class="section__subtitle">Leadership and organizational roles that developed communication, coordination, and documentation skills.</p>
+        </header>
+        <div class="timeline" role="list">
+
+          <article class="timeline-entry reveal" role="listitem" aria-labelledby="exp-1-role">
+            <div class="timeline-entry__marker" aria-hidden="true">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
+            </div>
+            <div class="timeline-entry__body">
+              <h3 class="timeline-entry__role" id="exp-1-role">Executive, Documentations Committee</h3>
+              <span class="timeline-entry__org">DLSU Chorale · De La Salle University</span>
+              <time class="timeline-entry__date" datetime="2024-10">October 2024 – Present</time>
+              <ul class="timeline-entry__bullets" aria-label="Responsibilities">
+                <li>Prepared weekly rehearsal reports documenting attendance, activities, and progress.</li>
+                <li>Developed and maintained Google Sheets trackers and Google Forms, including Approved Absence Forms, to streamline attendance and administrative processes.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-entry reveal" role="listitem" aria-labelledby="exp-2-role">
+            <div class="timeline-entry__marker" aria-hidden="true">
+              <span class="timeline-dot"></span>
+            </div>
+            <div class="timeline-entry__body">
+              <h3 class="timeline-entry__role" id="exp-2-role">Team Head, Programs Committee</h3>
+              <span class="timeline-entry__org">Tech Summit — La Salle Computer Society, DLSU</span>
+              <time class="timeline-entry__date" datetime="2024-06">June 2024 – July 2024</time>
+              <ul class="timeline-entry__bullets" aria-label="Responsibilities">
+                <li>Led the Programs Committee in planning and executing activities for La Salle Computer Society's flagship event.</li>
+                <li>Coordinated with speakers, hosts, and partner committees to align schedules, manage program transitions, and ensure smooth execution of event segments.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         EDUCATION
+    ════════════════════════════════════════════════════ -->
+    <section class="section" id="education" aria-labelledby="edu-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="edu-heading">Education</h2>
+        </header>
+        <div class="education-card reveal" aria-labelledby="edu-degree">
+          <div class="education-card__main">
+            <span class="education-card__institution">De La Salle University</span>
+            <h3 class="education-card__degree" id="edu-degree">Bachelor of Science in Information Technology</h3>
+            <time class="education-card__period" datetime="2022-09">September 2022 – Present</time>
+          </div>
+          <div class="education-card__honors" aria-label="Academic honors">
+            <p class="honors-heading">Academic Honors</p>
+            <div class="honor-item" role="listitem">
+              <span class="honor-star" aria-hidden="true">★</span>
+              <span class="honor-text">First Dean's Lister — Term 1, AY 2025–2026</span>
+            </div>
+            <div class="honor-item" role="listitem">
+              <span class="honor-star" aria-hidden="true">★</span>
+              <span class="honor-text">Second Dean's Lister — Term 1, AY 2024–2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ABOUT
+    ════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="about-heading">About</h2>
+        </header>
+        <div class="about-layout">
+          <div class="about-text reveal">
+            <p class="about-para">
+              I am a BS Information Technology student at De La Salle University with hands-on experience in web development, network design, and information security. Through academic projects, I have applied classroom concepts to build real systems — from scalable network infrastructures to full-stack web applications and security analysis reports.
+            </p>
+            <p class="about-para">
+              Outside the curriculum, I contribute to student organizations in documentation and event management roles, developing both my technical abilities and professional competencies. I am currently continuing my degree while building practical skills aligned with industry expectations.
+            </p>
+          </div>
+          <div class="about-stats reveal" aria-label="Quick facts">
+            <div class="stat-card">
+              <span class="stat-card__value">DLSU</span>
+              <span class="stat-card__label">De La Salle University</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">BSIT</span>
+              <span class="stat-card__label">Degree Program</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">2022</span>
+              <span class="stat-card__label">Started Degree</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">3</span>
+              <span class="stat-card__label">Completed Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════════════════════ -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 class="section__title" id="contact-heading">Contact</h2>
+          <p class="section__subtitle">Feel free to reach out via email or connect on LinkedIn.</p>
+        </header>
+        <div class="contact-layout">
+
+          <form class="contact-form reveal" id="contact-form" aria-label="Send a message" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="form-name">Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="form-name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-email">Email</label>
+              <input
+                class="form-input"
+                type="email"
+                id="form-email"
+                name="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-message">Message</label>
+              <textarea
+                class="form-input form-textarea"
+                id="form-message"
+                name="message"
+                placeholder="Your message..."
+                rows="5"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="contact-submit-btn">
+              Send Message
+            </button>
+            <p class="form-notice" role="note">
+              This form uses a <code>mailto:</code> fallback. For direct contact, use the links below.
+            </p>
+          </form>
+
+          <div class="contact-direct reveal" aria-label="Direct contact links">
+            <h3 class="contact-direct__heading">Get in touch</h3>
+            <a
+              class="contact-link"
+              href="mailto:roel_magbitang@dlsu.edu.ph"
+              id="contact-email-link"
+              aria-label="Send an email to roel_magbitang@dlsu.edu.ph"
+            >
+              <span class="contact-link__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M2 4h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M1 5l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="contact-link__text">roel_magbitang@dlsu.edu.ph</span>
+            </a>
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/andre-magbitang/"
+              id="contact-linkedin-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit LinkedIn profile (opens in new tab)"
+            >
+              <span class="contact-link__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M5 7v6M5 5v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M8 13v-3.5c0-1 .5-1.5 1.5-1.5S11 9 11 10v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M8 9.5V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="contact-link__text">linkedin.com/in/andre-magbitang</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 Roel Andre S. Magbitang</p>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#projects"       class="footer__link">Projects</a>
+        <a href="#skills"         class="footer__link">Skills</a>
+        <a href="#certifications" class="footer__link">Certifications</a>
+        <a href="#contact"        class="footer__link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
