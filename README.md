@@ -1,6 +1,6 @@
 # Roel Andre S. Magbitang — IT Student Portfolio
 
-Personal portfolio website built as part of the SDLC project (Phase 3: Implementation).
+Personal portfolio website built as part of the SDLC project.
 
 **Live site:** `https://<your-github-username>.github.io/<repository-name>/`
 
@@ -12,15 +12,15 @@ Personal portfolio website built as part of the SDLC project (Phase 3: Implement
 portfolio-site/
 ├── images/
 │   └── projects/
-│       ├── network-design.jpg    ← ⚠️ Add screenshot for Project 1
-│       ├── forumfriends.jpg      ← ⚠️ Add screenshot for Project 2
-│       ├── malware-analysis.jpg  ← ⚠️ Add screenshot for Project 3
+│       ├── network-design.jpg    
+│       ├── forumfriends.jpg      
+│       ├── malware-analysis.jpg  
 │       └── README.md             ← Filename reference guide
 ├── index.html      ← Semantic HTML5 single-page application
 ├── style.css       ← Pure CSS (custom properties, Grid, Flexbox)
 ├── script.js       ← Vanilla JS (nav, drawer, scroll-spy, animations)
-├── resume.pdf      ← ⚠️ Add your resume PDF here before deploying
-├── profile.jpg     ← ⚠️ Add your profile photo (see instructions below)
+├── resume.pdf      ← resume PDF 
+├── profile.jpg     ← rofile photo 
 └── README.md
 ```
 
@@ -100,16 +100,6 @@ https://<your-username>.github.io/<repo-name>/
 
 ---
 
-## Before You Deploy — Checklist
-
-- [ ] Add `resume.pdf` to the `portfolio-site/` folder
-- [ ] Add your profile photo as `profile.jpg` to the `portfolio-site/` folder
-- [ ] Add project screenshots to `images/projects/` using the exact filenames above
-- [ ] Replace `YOUR-CREDLY-USERNAME` in `index.html` with your actual Credly badge URLs (search for the string to find all 3)
-- [ ] Confirm your email address in `index.html` (already pre-filled)
-- [ ] Confirm your LinkedIn URL in `index.html` (already pre-filled)
-- [ ] Test on mobile before sharing the link
-
 ---
 
 ## Technology Stack
@@ -125,5 +115,3 @@ https://<your-username>.github.io/<repo-name>/
 No frameworks. No build step. No dependencies. Open `index.html` directly in any browser to preview.
 
 ---
-
-*Part of SDLC Design & Implementation — De La Salle University OJT*
