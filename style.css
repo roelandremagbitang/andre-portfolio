@@ -93,6 +93,54 @@
   --dur-fast: 150ms ease;
   --dur-base: 200ms ease;
   --dur-slow: 300ms ease;
+
+  /* ── Scrolled navbar bg (theme-aware) ── */
+  --c-navbar-scroll: rgba(10, 15, 12, 0.88);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT MODE OVERRIDES  (toggled by JS via data-theme="light")
+══════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  --c-bg-0:         #F4F7F5;
+  --c-bg-1:         #FFFFFF;
+  --c-bg-2:         #E8F0EA;
+  --c-border:       #C8D9CC;
+  --c-border-focus: #1E7A42;
+  --c-text-0:       #0D1F12;
+  --c-text-1:       #4A6950;
+  --c-accent:       #1B7A3E;
+  --c-accent-dim:   #145C2E;
+  --c-accent-glass: rgba(27, 122, 62, 0.1);
+  --c-ccna-bg:      #D6EDE0;
+  --c-ccna-border:  #1B7A3E;
+  --c-star:         #B07800;
+  --shadow-card:       0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 6px 28px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-accent:     0 4px 20px rgba(27, 122, 62, 0.25);
+  --c-navbar-scroll: rgba(244, 247, 245, 0.92);
+}
+
+[data-theme="light"] .cert-card--featured {
+  background: linear-gradient(140deg, #c8e8d4 0%, #d9f0e2 100%);
+}
+[data-theme="light"] .cert-card--featured .cert-card__name,
+[data-theme="light"] .cert-card--featured .cert-card__issuer,
+[data-theme="light"] .cert-card--featured .cert-card__credly {
+  color: #0a2e17;
+}
+[data-theme="light"] .cert-card--featured .cert-card__date { color: #2a5c38; }
+
+[data-theme="light"] .project-visual--network  { background: linear-gradient(135deg, #d4ede0 0%, #e0f2e9 100%); }
+[data-theme="light"] .project-visual--forum    { background: linear-gradient(135deg, #ddeee4 0%, #e8f4ec 100%); }
+[data-theme="light"] .project-visual--security { background: linear-gradient(135deg, #d8eee0 0%, #e4f2ea 100%); }
+[data-theme="light"] .project-visual__icon    { color: rgba(0,0,0,0.18); }
+[data-theme="light"] .project-visual__caption { color: rgba(0,0,0,0.25); }
+
+[data-theme="light"] .hero__bg-grid {
+  background-image:
+    linear-gradient(rgba(27, 122, 62, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 122, 62, 0.06) 1px, transparent 1px);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -236,7 +284,7 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
 .tag:hover {
   background-color: var(--c-accent-glass);
   color: var(--c-accent);
-  border-color: rgba(47, 129, 247, 0.35);
+  border-color: var(--c-border-focus);
 }
 
 .tag--mono {
@@ -307,7 +355,7 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
 
 .navbar.scrolled {
   border-bottom-color: var(--c-border);
-  background-color: rgba(13, 17, 23, 0.88);
+  background-color: var(--c-navbar-scroll);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -369,6 +417,43 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   outline-offset: 4px;
   border-radius: 2px;
 }
+
+/* ── Theme toggle button ── */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-border);
+  background-color: transparent;
+  color: var(--c-text-1);
+  transition:
+    background-color var(--dur-fast),
+    border-color     var(--dur-fast),
+    color            var(--dur-fast),
+    transform        var(--dur-fast);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background-color: var(--c-accent-glass);
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+  transform: rotate(15deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--c-border-focus);
+  outline-offset: 2px;
+}
+
+/* Icon swap: show sun in dark, moon in light */
+.theme-toggle .icon-sun  { display: block; }
+.theme-toggle .icon-moon { display: none;  }
+[data-theme="light"] .theme-toggle .icon-sun  { display: none;  }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 /* Hamburger button (hidden on desktop) */
 .navbar__menu-btn {
@@ -530,11 +615,12 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(47, 129, 247, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47, 129, 247, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(46, 158, 91, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 158, 91, 0.055) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 20%, transparent 100%);
   pointer-events: none;
+  transition: background-image var(--dur-slow);
 }
 
 .hero__inner {

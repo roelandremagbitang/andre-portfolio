@@ -211,4 +211,44 @@
     });
   }
 
+  /* ──────────────────────────────────────────────────────────────
+     8. LIGHT / DARK THEME TOGGLE
+     Persists preference in localStorage under 'theme'.
+     Applies 'data-theme="light"' on <html> for light mode.
+  ────────────────────────────────────────────────────────────── */
+  const STORAGE_KEY   = 'theme';
+  const htmlEl        = document.documentElement;
+  const toggleBtn     = document.getElementById('theme-toggle-btn');
+  const drawerToggle  = document.getElementById('drawer-theme-toggle');
+  const drawerLabel   = document.getElementById('drawer-theme-label');
+
+  /** Apply the theme and sync all button states */
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      htmlEl.setAttribute('data-theme', 'light');
+      if (toggleBtn)    toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
+      if (drawerLabel)  drawerLabel.textContent = 'Switch to Dark Mode';
+    } else {
+      htmlEl.removeAttribute('data-theme');
+      if (toggleBtn)    toggleBtn.setAttribute('aria-label', 'Switch to light mode');
+      if (drawerLabel)  drawerLabel.textContent = 'Switch to Light Mode';
+    }
+    localStorage.setItem(STORAGE_KEY, theme);
+  }
+
+  function toggleTheme() {
+    const current = htmlEl.getAttribute('data-theme');
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  }
+
+  // Load saved preference on page load
+  const savedTheme = localStorage.getItem(STORAGE_KEY);
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  }
+
+  if (toggleBtn)   toggleBtn.addEventListener('click', toggleTheme);
+  if (drawerToggle) drawerToggle.addEventListener('click', toggleTheme);
+
 })();
+
