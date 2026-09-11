@@ -102,45 +102,58 @@
    LIGHT MODE OVERRIDES  (toggled by JS via data-theme="light")
 ══════════════════════════════════════════════════════════════ */
 [data-theme="light"] {
-  --c-bg-0:         #F4F7F5;
-  --c-bg-1:         #FFFFFF;
-  --c-bg-2:         #E8F0EA;
-  --c-border:       #C8D9CC;
-  --c-border-focus: #1E7A42;
-  --c-text-0:       #0D1F12;
-  --c-text-1:       #4A6950;
-  --c-accent:       #1B7A3E;
-  --c-accent-dim:   #145C2E;
-  --c-accent-glass: rgba(27, 122, 62, 0.1);
-  --c-ccna-bg:      #D6EDE0;
-  --c-ccna-border:  #1B7A3E;
-  --c-star:         #B07800;
-  --shadow-card:       0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
-  --shadow-card-hover: 0 6px 28px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-accent:     0 4px 20px rgba(27, 122, 62, 0.25);
-  --c-navbar-scroll: rgba(244, 247, 245, 0.92);
+  --c-bg-0:         #F0F4F1;   /* page canvas — slightly off-white, easy on eyes */
+  --c-bg-1:         #FFFFFF;   /* card / surface                                 */
+  --c-bg-2:         #E2EDE5;   /* chip / tag background                          */
+  --c-border:       #B8CEBC;   /* visible but not harsh borders                  */
+  --c-border-focus: #1B6E38;   /* focus ring                                     */
+  --c-text-0:       #0A1A0E;   /* near-black primary text — max contrast         */
+  --c-text-1:       #2E5235;   /* dark forest green — readable secondary text    */
+  --c-accent:       #1A7038;   /* DLSU green, darkened for light bg contrast      */
+  --c-accent-dim:   #115929;   /* accent hover                                   */
+  --c-accent-glass: rgba(26, 112, 56, 0.08);
+  --c-ccna-bg:      #D0E9D8;
+  --c-ccna-border:  #1A7038;
+  --c-star:         #8A5E00;
+  --shadow-card:       0 1px 4px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.07);
+  --shadow-card-hover: 0 6px 28px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.09);
+  --shadow-accent:     0 4px 20px rgba(26, 112, 56, 0.22);
+  --c-navbar-scroll: rgba(240, 244, 241, 0.93);
+}
+
+/* Extra light-mode overrides for elements that use hardcoded values */
+[data-theme="light"] .section--alt {
+  background-color: var(--c-bg-2);
 }
 
 [data-theme="light"] .cert-card--featured {
-  background: linear-gradient(140deg, #c8e8d4 0%, #d9f0e2 100%);
+  background: linear-gradient(140deg, #c0e4cc 0%, #d4edd9 100%);
 }
 [data-theme="light"] .cert-card--featured .cert-card__name,
 [data-theme="light"] .cert-card--featured .cert-card__issuer,
 [data-theme="light"] .cert-card--featured .cert-card__credly {
   color: #0a2e17;
 }
-[data-theme="light"] .cert-card--featured .cert-card__date { color: #2a5c38; }
+[data-theme="light"] .cert-card--featured .cert-card__date { color: #1e4d29; }
 
-[data-theme="light"] .project-visual--network  { background: linear-gradient(135deg, #d4ede0 0%, #e0f2e9 100%); }
-[data-theme="light"] .project-visual--forum    { background: linear-gradient(135deg, #ddeee4 0%, #e8f4ec 100%); }
-[data-theme="light"] .project-visual--security { background: linear-gradient(135deg, #d8eee0 0%, #e4f2ea 100%); }
-[data-theme="light"] .project-visual__icon    { color: rgba(0,0,0,0.18); }
-[data-theme="light"] .project-visual__caption { color: rgba(0,0,0,0.25); }
+[data-theme="light"] .project-visual--network  { background: linear-gradient(135deg, #cce5d6 0%, #daf0e4 100%); }
+[data-theme="light"] .project-visual--forum    { background: linear-gradient(135deg, #d6eadc 0%, #e3f3e8 100%); }
+[data-theme="light"] .project-visual--security { background: linear-gradient(135deg, #cce3d4 0%, #d8ecde 100%); }
+[data-theme="light"] .project-visual__icon    { color: rgba(0, 0, 0, 0.22); }
+[data-theme="light"] .project-visual__caption { color: rgba(0, 0, 0, 0.30); }
 
 [data-theme="light"] .hero__bg-grid {
   background-image:
-    linear-gradient(rgba(27, 122, 62, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(27, 122, 62, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(26, 112, 56, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 112, 56, 0.07) 1px, transparent 1px);
+}
+
+[data-theme="light"] .timeline-dot {
+  border-color: var(--c-bg-1);
+}
+
+[data-theme="light"] .honor-item {
+  background-color: var(--c-bg-2);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -167,6 +180,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* Smooth theme transitions */
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -928,7 +945,7 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3);
-  align-items: start;
+  align-items: stretch;   /* all cards the same height */
 }
 
 .cert-card {
@@ -1004,9 +1021,12 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   outline-offset: 3px;
 }
 
-/* Push the "View Badge" label to the bottom of the card */
+/* Push the "View Badge" label to the bottom of every card */
+.cert-card--link .cert-card__name {
+  flex: 1;           /* name expands to fill available height */
+}
 .cert-card--link .cert-card__date {
-  margin-bottom: auto;
+  margin-bottom: var(--sp-2);
 }
 
 /* "View Badge on Credly ↗" footer label */
@@ -1049,9 +1069,9 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
 
 /* ── Org logo ── */
 .timeline-entry__org-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-sm);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--r-md);
   background-color: var(--c-bg-2);
   border: 1px solid var(--c-border);
   display: flex;
@@ -1066,18 +1086,18 @@ code { font-family: var(--f-mono); font-size: var(--t-xs); }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 4px;
+  padding: 6px;
 }
 
 .timeline-entry__org-logo--fallback {
-  font-size: var(--t-xs);
+  font-size: var(--t-sm);
   font-weight: 700;
   color: var(--c-accent);
   font-family: var(--f-mono);
   letter-spacing: 0.05em;
   text-align: center;
-  line-height: 1.1;
-  padding: 4px;
+  line-height: 1.2;
+  padding: 6px;
 }
 
 
